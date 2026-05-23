@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEM 2 IT</title>
+    <title>SEM 3 IT</title>
 </head>
 <body>
-<label for="calc">Calculus of Vectors, Complex Functions and Laplace Transforms</label>
-<select name="Calc Vect" id="calc">
+<label for="math">Mathematical Foundations for Computing Technologies</label>
+<select name="discrete maths" id="math">
   <option value="10">O</option>
   <option value="9">A+</option>
   <option value="8">A</option>
@@ -17,8 +17,8 @@
   <option value="0">U</option>
 </select>
 <br>
-<label for="beee">Basic Electrical and Electronics Engineering</label>
-<select name="BEEE" id="beee">
+<label for="uhv">Universal Human Values 2 : Understanding Harmony</label>
+<select name="UHV2" id="uhv">
   <option value="10">O</option>
   <option value="9">A+</option>
   <option value="8">A</option>
@@ -28,8 +28,8 @@
   <option value="0">U</option>
 </select>
 <br>
-<label for="progc">Programming in C and Data Structures</label>
-<select name="C and DS" id="progc">
+<label for="oops">Object Oriented Programming Using Java</label>
+<select name="oopjava" id="oops">
   <option value="10">O</option>
   <option value="9">A+</option>
   <option value="8">A</option>
@@ -39,8 +39,8 @@
   <option value="0">U</option>
 </select>
 <br>
-<label for="evs">Environmental Science</label>
-<select name="Envi Sci" id="evs">
+<label for="dbt">Database Technology</label>
+<select name="Database" id="dbt">
   <option value="10">O</option>
   <option value="9">A+</option>
   <option value="8">A</option>
@@ -50,8 +50,8 @@
   <option value="0">U</option>
 </select>
 <br>
-<label for="hume">Humanities Elective</label>
-<select name="Elective" id="hume">
+<label for="psep">Principles Of Software Engineering and Practices</label>
+<select name="princi" id="psep">
   <option value="10">O</option>
   <option value="9">A+</option>
   <option value="8">A</option>
@@ -61,8 +61,8 @@
   <option value="0">U</option>
 </select>
 <br>
-<label for="web">Introduction to Web Programming</label>
-<select name="Web Progg" id="web">
+<label for="dtie">Design Thinking , Innovation and Entrepreneurship</label>
+<select name="die" id="dtie">
   <option value="10">O</option>
   <option value="9">A+</option>
   <option value="8">A</option>
@@ -72,8 +72,8 @@
   <option value="0">U</option>
 </select>
 <br>
-<label for="tams">Tamils and Technology</label>
-<select name="Tamils and Techs" id="tams">
+<label for="dsmd">Digital Systems and Microprocessor Design</label>
+<select name="mpmc" id="dsmd">
   <option value="10">O</option>
   <option value="9">A+</option>
   <option value="8">A</option>
@@ -83,8 +83,8 @@
   <option value="0">U</option>
 </select>
 <br>
-<label for="dtep">Design Thinking and Engineering Practices Labratory</label>
-<select name="dtep lab" id="dtep">
+<label for="dc">Introduction to Digital Communication</label>
+<select name="Introdc" id="dc">
   <option value="10">O</option>
   <option value="9">A+</option>
   <option value="8">A</option>
@@ -93,8 +93,8 @@
   <option value="5">C</option>
   <option value="0">U</option>
 </select>
-<br><label for="sdp">Software Development Project</label>
-<select name="SDP Lab" id="sdp">
+<br><label for="dblab">Database Technology Labratory</label>
+<select name="DB Lab" id="dblab">
   <option value="10">O</option>
   <option value="9">A+</option>
   <option value="8">A</option>
@@ -109,37 +109,37 @@
 </body>
 </html>
 <script>
-    const itsem1_dict={'Calculus':4,'BEEE':3,'C and DS':3,'EVS':1,'Humanities':3,'web dev':3,'Tamils and Tech':1,'DTEP Lab':1.5,'SDP': 3.5};
+    const itsem1_dict={'discrete math':3,'uhv':3,'OOPs in java':3,'Database Tech':3,'PSEP':2,'DTIE':3,'DSMD':3,'DC': 2,'DB Lab':1.5};
     const grades={'O':10,'A+':9,'A':8,'B+':7,'B':6,'C':5,'U':0};
     function calculatefunc(){
-        const calc = document.getElementById("calc");
-        const calc_val = parseInt(calc.value,10)
+        const math = document.getElementById("math");
+        const math_val = parseInt(math.value,10)
 
-        const beee = document.getElementById("beee");
-        const beee_val = parseInt(beee.value,10)
+        const uhv = document.getElementById("uhv");
+        const uhv_val = parseInt(uhv.value,10)
 
-        const progc = document.getElementById("progc");
-        const progc_val = parseInt(progc.value , 10);
+        const oops = document.getElementById("oops");
+        const oops_val = parseInt(oops.value , 10);
 
-        const evs = document.getElementById("evs");
-        const evs_val = parseInt(evs.value , 10);
+        const dbt = document.getElementById("dbt");
+        const dbt_val = parseInt(dbt.value , 10);
 
-        const hume = document.getElementById("hume");
-        const hume_val = parseInt(hume.value , 10);
+        const psep= document.getElementById("psep");
+        const psep_val = parseInt(psep.value , 10);
 
-        const web = document.getElementById("web");
-        const web_val = parseInt(web.value , 10);
+        const dtie = document.getElementById("dtie");
+        const dtie_val = parseInt(dtie.value , 10);
 
-        const tamil = document.getElementById("tams");
-        const tamil_val = parseInt(tamil.value , 10);
+        const dsmd = document.getElementById("dsmd");
+        const dsmd_val = parseInt(dsmd.value , 10);
 
-        const dtep = document.getElementById("dtep");
-        const dtep_val = parseInt(dtep.value , 10);
+        const dc = document.getElementById("dc");
+        const dc_val = parseInt(dc.value , 10);
 
-        const sdp = document.getElementById("sdp");
-        const sdp_val = parseInt(sdp.value , 10);
+        const dblab = document.getElementById("dblab");
+        const dblab_val = parseInt(dblab.value , 10);
 
-        const grades = new Array(calc_val , beee_val , progc_val , evs_val , hume_val , web_val , tamil_val , dtep_val , sdp_val);
+        const grades = new Array(math_val , uhv_val , oops_val , dbt_val , psep_val , dtie_val , dsmd_val , dc_val , dblab_val);
         
         let total_creds = 0 ;
         let num_creds_rec = 0 ;
