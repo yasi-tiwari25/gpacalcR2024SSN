@@ -111,7 +111,7 @@ This ensures **accurate CGPA calculation** instead of a simple average.
 1. Download or clone the repository
 
 ```bash
-git clone <your-repository-link>
+git clone https://github.com/yasi-tiwari25/gpacalcR2024SSN
 ```
 
 2. Open:
