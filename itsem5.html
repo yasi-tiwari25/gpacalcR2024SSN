@@ -1,144 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEM 5 IT</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-<label for="wbd">Full Stack Web Development</label>
-<select name="Full Stack Web Development" id="wbd">
-  <option value="10">O</option>
-  <option value="9">A+</option>
-  <option value="8">A</option>
-  <option value="7">B+</option>
-  <option value="6">B</option>
-  <option value="5">C</option>
-  <option value="0">U</option>
-</select>
-<br>
-<label for="poos">Principles Of Operating Systems</label>
-<select name="Principles Of Operating Systems" id="poos">
-  <option value="10">O</option>
-  <option value="9">A+</option>
-  <option value="8">A</option>
-  <option value="7">B+</option>
-  <option value="6">B</option>
-  <option value="5">C</option>
-  <option value="0">U</option>
-</select>
-<br>
-<label for="dlc">Deep Learning Concepts And Architectures</label>
-<select name="Deep Learning Concepts And Architectures" id="dlc">
-  <option value="10">O</option>
-  <option value="9">A+</option>
-  <option value="8">A</option>
-  <option value="7">B+</option>
-  <option value="6">B</option>
-  <option value="5">C</option>
-  <option value="0">U</option>
-</select>
-<br>
-<label for="atcd">Automata Theory And Compiler Design</label>
-<select name="Automata Theory And Compiler Design" id="atcd">
-  <option value="10">O</option>
-  <option value="9">A+</option>
-  <option value="8">A</option>
-  <option value="7">B+</option>
-  <option value="6">B</option>
-  <option value="5">C</option>
-  <option value="0">U</option>
-</select>
-<br>
-<label for="oe">Open Elective 1</label>
-<select name="Open Elective 1" id="oe">
-  <option value="10">O</option>
-  <option value="9">A+</option>
-  <option value="8">A</option>
-  <option value="7">B+</option>
-  <option value="6">B</option>
-  <option value="5">C</option>
-  <option value="0">U</option>
-</select>
-<br>
-<label for="devo">Dev Ops</label>
-<select name="Dev Ops" id="devo">
-  <option value="10">O</option>
-  <option value="9">A+</option>
-  <option value="8">A</option>
-  <option value="7">B+</option>
-  <option value="6">B</option>
-  <option value="5">C</option>
-  <option value="0">U</option>
-</select>
-<br>
-<label for="ics">Introduction To Cyber Security</label>
-<select name="Introduction To Cyber Security" id="ics">
-  <option value="10">O</option>
-  <option value="9">A+</option>
-  <option value="8">A</option>
-  <option value="7">B+</option>
-  <option value="6">B</option>
-  <option value="5">C</option>
-  <option value="0">U</option>
-</select>
-<br>
-<label for="sdp">Mini Project (SDP 2) </label>
-<select name="Mini Project" id="sdp">
-  <option value="10">O</option>
-  <option value="9">A+</option>
-  <option value="8">A</option>
-  <option value="7">B+</option>
-  <option value="6">B</option>
-  <option value="5">C</option>
-  <option value="0">U</option>
-</select>
-<br>
-<button onclick="calculatefunc()">Submit!</button>
-<p id = "ans"></p>
+
+    <div class="gpa-container">
+        <div class="gpa-card">
+
+            <h1>Semester 5 GPA Calculator</h1>
+
+            <div class="subject-row">
+                <label for="wbd">
+                    Full Stack Web Development
+                </label>
+
+                <select name="Full Stack Web Development" id="wbd">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="poos">
+                    Principles Of Operating Systems
+                </label>
+
+                <select name="Principles Of Operating Systems" id="poos">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="dlc">
+                    Deep Learning Concepts And Architectures
+                </label>
+
+                <select name="Deep Learning Concepts And Architectures" id="dlc">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="atcd">
+                    Automata Theory And Compiler Design
+                </label>
+
+                <select name="Automata Theory And Compiler Design" id="atcd">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="oe">
+                    Open Elective 1
+                </label>
+
+                <select name="Open Elective 1" id="oe">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="devo">
+                    Dev Ops
+                </label>
+
+                <select name="Dev Ops" id="devo">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="ics">
+                    Introduction To Cyber Security
+                </label>
+
+                <select name="Introduction To Cyber Security" id="ics">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="sdp">
+                    Mini Project (SDP 2)
+                </label>
+
+                <select name="Mini Project" id="sdp">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <button onclick="calculatefunc()">
+                Submit!
+            </button>
+
+            <p id="ans"></p>
+
+        </div>
+    </div>
+
+    <script>
+        const itsem5_dict = {
+            'Full Stack Web Development': 3,
+            'Principles Of Operating Systems': 3,
+            'Deep Learning Concepts And Architectures': 3,
+            'Automata Theory And Compiler Design': 3,
+            'Open Elective 1': 3,
+            'Dev Ops': 1,
+            'Introduction To Cyber Security': 1,
+            'Mini Project (SDP 2)': 3
+        };
+
+        function calculatefunc() {
+
+            const wbd = document.getElementById("wbd");
+            const wbd_val = parseInt(wbd.value, 10);
+
+            const poos = document.getElementById("poos");
+            const poos_val = parseInt(poos.value, 10);
+
+            const dlc = document.getElementById("dlc");
+            const dlc_val = parseInt(dlc.value, 10);
+
+            const atcd = document.getElementById("atcd");
+            const atcd_val = parseInt(atcd.value, 10);
+
+            const oe = document.getElementById("oe");
+            const oe_val = parseInt(oe.value, 10);
+
+            const devo = document.getElementById("devo");
+            const devo_val = parseInt(devo.value, 10);
+
+            const ics = document.getElementById("ics");
+            const ics_val = parseInt(ics.value, 10);
+
+            const sdp = document.getElementById("sdp");
+            const sdp_val = parseInt(sdp.value, 10);
+
+            const grades = [
+                wbd_val,
+                poos_val,
+                dlc_val,
+                atcd_val,
+                oe_val,
+                devo_val,
+                ics_val,
+                sdp_val
+            ];
+
+            let total_creds = 0;
+            let num_creds_rec = 0;
+            let i = 0;
+
+            Object.values(itsem5_dict).forEach(function (value) {
+                total_creds += value;
+                num_creds_rec += grades[i] * value;
+                i++;
+            });
+
+            let gpa = num_creds_rec / total_creds;
+
+            const myele = document.getElementById("ans");
+            myele.innerText = "Your GPA is: " + gpa.toFixed(3);
+        }
+    </script>
+
 </body>
+
 </html>
-<script>
-    const itsem1_dict={'Full Stack Web Development':3,'Principles Of Operating Systems':3,'Deep Learning Concepts And Architectures':3,'Automata Theory And Compiler Design':3,'Open Elective 1':3,'Dev Ops':1,'Introduction To Cyber Security':1,'Mini Project (SDP 2) ':3};
-    const grades={'O':10,'A+':9,'A':8,'B+':7,'B':6,'C':5,'U':0};
-    function calculatefunc(){
-        const wbd = document.getElementById("wbd");
-        const wbd_val = parseInt(wbd.value,10)
-
-        const poos = document.getElementById("poos");
-        const poos_val = parseInt(poos.value,10)
-
-        const dlc = document.getElementById("dlc");
-        const dlc_val = parseInt(dlc.value , 10);
-
-        const atcd = document.getElementById("atcd");
-        const atcd_val = parseInt(atcd.value , 10);
-
-        const oe = document.getElementById("oe");
-        const oe_val = parseInt(oe.value , 10);
-
-        const devo = document.getElementById("devo");
-        const devo_val = parseInt(devo.value , 10);
-
-        const ics = document.getElementById("ics");
-        const ics_val = parseInt(ics.value , 10);
-
-        const sdp = document.getElementById("sdp");
-        const sdp_val = parseInt(sdp.value , 10);
-
-        const grades = new Array(wbd_val , poos_val , dlc_val , atcd_val , oe_val , devo_val , ics_val , sdp_val);
-        
-        let total_creds = 0 ;
-        let num_creds_rec = 0 ;
-        let i = 0;
-        Object.values(itsem1_dict).forEach(function(value,key){
-            total_creds += value;
-            num_creds_rec += grades[i] * value;
-            i++;
-        });
-        let cgpa = num_creds_rec/total_creds;
-        const myele = document.getElementById("ans");
-        myele.innerText = "Your cgpa is :" + cgpa.toFixed(3);
-    }
-</script>
-
