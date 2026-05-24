@@ -3,7 +3,7 @@
 A responsive web-based **GPA and CGPA Calculator** built for **Information Technology (IT) students mainly R2024 - Relative Grading** to calculate semester GPA and overall CGPA quickly and accurately.
 
 This project supports **Semester 1 to Semester 8 GPA calculation** along with a **weighted CGPA calculator** based on official semester credits.
-
+Deployed on : https://gpacalc-r2024-ssn.vercel.app/
 ---
 
 ## Features
