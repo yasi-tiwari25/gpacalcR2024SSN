@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEM 8 IT</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="gpa-container">
+        <div class="gpa-card">
+
+            <h1>Semester 8 GPA Calculator</h1>
+
+            <div class="subject-row">
+                <label for="pe6">
+                    Professional Elective VI
+                </label>
+
+                <select name="Professional Elective 6" id="pe6">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="oe2">
+                    Open Elective II
+                </label>
+
+                <select name="Open Elective 2" id="oe2">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="project2">
+                    Project Work – Phase 2
+                </label>
+
+                <select name="Project Work Phase 2" id="project2">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <button onclick="calculatefunc()">
+                Submit!
+            </button>
+
+            <p id="ans"></p>
+
+        </div>
+    </div>
+
+    <script>
+        const itsem8_dict = {
+            'Professional Elective VI': 3,
+            'Open Elective II': 3,
+            'Project Work – Phase 2': 8
+        };
+
+        function calculatefunc() {
+
+            const pe6_val = parseInt(document.getElementById("pe6").value, 10);
+            const oe2_val = parseInt(document.getElementById("oe2").value, 10);
+            const project2_val = parseInt(document.getElementById("project2").value, 10);
+
+            const grades = [
+                pe6_val,
+                oe2_val,
+                project2_val
+            ];
+
+            let total_creds = 0;
+            let num_creds_rec = 0;
+            let i = 0;
+
+            Object.values(itsem8_dict).forEach(function (value) {
+                total_creds += value;
+                num_creds_rec += grades[i] * value;
+                i++;
+            });
+
+            let gpa = num_creds_rec / total_creds;
+
+            const myele = document.getElementById("ans");
+            myele.innerText = "Your GPA is: " + gpa.toFixed(3);
+        }
+    </script>
+
+</body>
+
+</html>

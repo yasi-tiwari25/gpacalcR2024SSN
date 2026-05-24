@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEM 6 IT</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="gpa-container">
+        <div class="gpa-card">
+
+            <h1>Semester 6 GPA Calculator</h1>
+
+            <div class="subject-row">
+                <label for="iot">
+                    Internet of Things and Artificial Intelligence of Things
+                </label>
+
+                <select name="IoT AIoT" id="iot">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="cloud">
+                    Cloud and Edge Computing
+                </label>
+
+                <select name="Cloud Computing" id="cloud">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="manage">
+                    Management Elective
+                </label>
+
+                <select name="Management Elective" id="manage">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="comp">
+                    Comprehensive Evaluation
+                </label>
+
+                <select name="Comprehensive Evaluation" id="comp">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="gpu">
+                    GPU Architecture
+                </label>
+
+                <select name="GPU Architecture" id="gpu">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="pe1">
+                    Professional Elective I
+                </label>
+
+                <select name="Professional Elective 1" id="pe1">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="pe2">
+                    Professional Elective II
+                </label>
+
+                <select name="Professional Elective 2" id="pe2">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="madlab">
+                    Mobile Application Development Laboratory
+                </label>
+
+                <select name="MAD Lab" id="madlab">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <div class="subject-row">
+                <label for="mini3">
+                    Mini Project – III
+                </label>
+
+                <select name="Mini Project 3" id="mini3">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </div>
+
+            <button onclick="calculatefunc()">
+                Submit!
+            </button>
+
+            <p id="ans"></p>
+
+        </div>
+    </div>
+
+    <script>
+        const itsem6_dict = {
+            'Internet of Things and Artificial Intelligence of Things': 3,
+            'Cloud and Edge Computing': 3,
+            'Management Elective': 3,
+            'Comprehensive Evaluation': 1,
+            'GPU Architecture': 1,
+            'Professional Elective I': 3,
+            'Professional Elective II': 3,
+            'Mobile Application Development Laboratory': 2,
+            'Mini Project – III': 3
+        };
+
+        function calculatefunc() {
+
+            const iot_val = parseInt(document.getElementById("iot").value, 10);
+            const cloud_val = parseInt(document.getElementById("cloud").value, 10);
+            const manage_val = parseInt(document.getElementById("manage").value, 10);
+            const comp_val = parseInt(document.getElementById("comp").value, 10);
+            const gpu_val = parseInt(document.getElementById("gpu").value, 10);
+            const pe1_val = parseInt(document.getElementById("pe1").value, 10);
+            const pe2_val = parseInt(document.getElementById("pe2").value, 10);
+            const madlab_val = parseInt(document.getElementById("madlab").value, 10);
+            const mini3_val = parseInt(document.getElementById("mini3").value, 10);
+
+            const grades = [
+                iot_val,
+                cloud_val,
+                manage_val,
+                comp_val,
+                gpu_val,
+                pe1_val,
+                pe2_val,
+                madlab_val,
+                mini3_val
+            ];
+
+            let total_creds = 0;
+            let num_creds_rec = 0;
+            let i = 0;
+
+            Object.values(itsem6_dict).forEach(function (value) {
+                total_creds += value;
+                num_creds_rec += grades[i] * value;
+                i++;
+            });
+
+            let gpa = num_creds_rec / total_creds;
+
+            const myele = document.getElementById("ans");
+            myele.innerText = "Your GPA is: " + gpa.toFixed(3);
+        }
+    </script>
+
+</body>
+
+</html>

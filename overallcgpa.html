@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="gpa-container">
+        <div class="gpa-card">
+
+            <h1>CGPA Calculator</h1>
+
+            <div class="subject-row">
+                <label for="semCount">
+                    How many semester results do you know?
+                </label>
+
+                <select id="semCount" onchange="generateInputs()">
+                    <option value="">Select</option>
+                    <option value="1">1 Semester</option>
+                    <option value="2">2 Semesters</option>
+                    <option value="3">3 Semesters</option>
+                    <option value="4">4 Semesters</option>
+                    <option value="5">5 Semesters</option>
+                    <option value="6">6 Semesters</option>
+                    <option value="7">7 Semesters</option>
+                    <option value="8">8 Semesters</option>
+                </select>
+            </div>
+
+            <div id="semesterInputs"></div>
+
+            <button onclick="calculateCGPA()">
+                Calculate CGPA
+            </button>
+
+            <p id="ans"></p>
+
+        </div>
+    </div>
+
+    <script>
+
+        // Credits per semester
+        const semesterCredits = [
+            22,    // Sem 1
+            23,    // Sem 2
+            23.5,  // Sem 3
+            22.5,  // Sem 4
+            20,    // Sem 5
+            22,    // Sem 6
+            20,    // Sem 7
+            14     // Sem 8
+        ];
+
+        function generateInputs() {
+
+            const semCount =
+                parseInt(document.getElementById("semCount").value);
+
+            const container =
+                document.getElementById("semesterInputs");
+
+            container.innerHTML = "";
+
+            for (let i = 1; i <= semCount; i++) {
+
+                container.innerHTML += `
+                    <div class="subject-row">
+                        <label for="sem${i}">
+                            Semester ${i} GPA
+                        </label>
+
+                        <input
+                            type="number"
+                            id="sem${i}"
+                            min="0"
+                            max="10"
+                            step="0.001"
+                            placeholder="Enter GPA"
+                        >
+                    </div>
+                `;
+            }
+        }
+
+        function calculateCGPA() {
+
+            const semCount =
+                parseInt(document.getElementById("semCount").value);
+
+            if (!semCount) {
+                alert("Please select number of semesters.");
+                return;
+            }
+
+            let weightedTotal = 0;
+            let totalCredits = 0;
+
+            for (let i = 1; i <= semCount; i++) {
+
+                const gpaInput =
+                    document.getElementById(`sem${i}`);
+
+                const gpa =
+                    parseFloat(gpaInput.value);
+
+                if (isNaN(gpa)) {
+                    alert(`Please enter GPA for Semester ${i}`);
+                    return;
+                }
+
+                if (gpa < 0 || gpa > 10) {
+                    alert(`Semester ${i} GPA must be between 0 and 10`);
+                    return;
+                }
+
+                weightedTotal +=
+                    gpa * semesterCredits[i - 1];
+
+                totalCredits +=
+                    semesterCredits[i - 1];
+            }
+
+            const cgpa =
+                weightedTotal / totalCredits;
+
+            document.getElementById("ans").innerText =
+                "Your CGPA is: " + cgpa.toFixed(3);
+        }
+
+    </script>
+
+</body>
+
+</html>
