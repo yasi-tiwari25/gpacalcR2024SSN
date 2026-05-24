@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEM 4 IT</title>
+</head>
+<body>
+<label for="math">Probability And Statistics</label>
+<select name="probstat" id="math">
+  <option value="10">O</option>
+  <option value="9">A+</option>
+  <option value="8">A</option>
+  <option value="7">B+</option>
+  <option value="6">B</option>
+  <option value="5">C</option>
+  <option value="0">U</option>
+</select>
+<br>
+<label for="prml">Pattern Recognition and Machine Learning</label>
+<select name="ML" id="prml">
+  <option value="10">O</option>
+  <option value="9">A+</option>
+  <option value="8">A</option>
+  <option value="7">B+</option>
+  <option value="6">B</option>
+  <option value="5">C</option>
+  <option value="0">U</option>
+</select>
+<br>
+<label for="dav">Data Analytics And Visualisation</label>
+<select name="DS" id="dav">
+  <option value="10">O</option>
+  <option value="9">A+</option>
+  <option value="8">A</option>
+  <option value="7">B+</option>
+  <option value="6">B</option>
+  <option value="5">C</option>
+  <option value="0">U</option>
+</select>
+<br>
+<label for="ic">Indian Constituition</label>
+<select name="Indianc" id="ic">
+  <option value="10">O</option>
+  <option value="9">A+</option>
+  <option value="8">A</option>
+  <option value="7">B+</option>
+  <option value="6">B</option>
+  <option value="5">C</option>
+  <option value="0">U</option>
+</select>
+<br>
+<label for="adsa">Advanced Data Structures And Algorithm Analysis</label>
+<select name="DSA" id="adsa">
+  <option value="10">O</option>
+  <option value="9">A+</option>
+  <option value="8">A</option>
+  <option value="7">B+</option>
+  <option value="6">B</option>
+  <option value="5">C</option>
+  <option value="0">U</option>
+</select>
+<br>
+<label for="spml">Signal Processing For Machine Learning</label>
+<select name="SignalP" id="spml">
+  <option value="10">O</option>
+  <option value="9">A+</option>
+  <option value="8">A</option>
+  <option value="7">B+</option>
+  <option value="6">B</option>
+  <option value="5">C</option>
+  <option value="0">U</option>
+</select>
+<br>
+<label for="dcn">Data Communication And Networks</label>
+<select name="DCAN" id="dcn">
+  <option value="10">O</option>
+  <option value="9">A+</option>
+  <option value="8">A</option>
+  <option value="7">B+</option>
+  <option value="6">B</option>
+  <option value="5">C</option>
+  <option value="0">U</option>
+</select>
+<br>
+<label for="co">Computer Organisation</label>
+<select name="Compo" id="co">
+  <option value="10">O</option>
+  <option value="9">A+</option>
+  <option value="8">A</option>
+  <option value="7">B+</option>
+  <option value="6">B</option>
+  <option value="5">C</option>
+  <option value="0">U</option>
+</select>
+<br><label for="adsalab">Advanced Data Structures And Algorithm Analysis Labratory</label>
+<select name="ADSA Lab" id="adsalab">
+  <option value="10">O</option>
+  <option value="9">A+</option>
+  <option value="8">A</option>
+  <option value="7">B+</option>
+  <option value="6">B</option>
+  <option value="5">C</option>
+  <option value="0">U</option>
+</select>
+<br>
+<button onclick="calculatefunc()">Submit!</button>
+<p id = "ans"></p>
+</body>
+</html>
+<script>
+    const itsem1_dict={'prob and stat':4,'prml':3,'dav':3,'ic':1,'adsa':3,'spml':2,'dcn':3,'co': 2,'adsalab':1.5};
+    const grades={'O':10,'A+':9,'A':8,'B+':7,'B':6,'C':5,'U':0};
+    function calculatefunc(){
+        const math = document.getElementById("math");
+        const math_val = parseInt(math.value,10)
+
+        const prml = document.getElementById("prml");
+        const prml_val = parseInt(prml.value,10)
+
+        const dav = document.getElementById("dav");
+        const dav_val = parseInt(dav.value , 10);
+
+        const ic = document.getElementById("ic");
+        const ic_val = parseInt(ic.value , 10);
+
+        const adsalab= document.getElementById("adsalab");
+        const adsalab_val = parseInt(adsalab.value , 10);
+
+        const adsa = document.getElementById("adsa");
+        const adsa_val = parseInt(adsa.value , 10);
+
+        const spml = document.getElementById("spml");
+        const spml_val = parseInt(spml.value , 10);
+
+        const dcn = document.getElementById("dcn");
+        const dcn_val = parseInt(dcn.value , 10);
+
+        const co = document.getElementById("co");
+        const co_val = parseInt(co.value , 10);
+
+        const grades = new Array(math_val , prml_val , dav_val , ic_val , adsa_val , spml_val , dcn_val , co_val , adsalab_val);
+        
+        let total_creds = 0 ;
+        let num_creds_rec = 0 ;
+        let i = 0;
+        Object.values(itsem1_dict).forEach(function(value,key){
+            total_creds += value;
+            num_creds_rec += grades[i] * value;
+            i++;
+        });
+        let cgpa = num_creds_rec/total_creds;
+        const myele = document.getElementById("ans");
+        myele.innerText = "Your cgpa is :" + cgpa.toFixed(3);
+    }
+</script>
+
