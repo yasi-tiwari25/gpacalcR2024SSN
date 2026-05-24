@@ -103,3 +103,43 @@ button:hover{
         font-size: 1.5rem;
     }
 }
+/* Subtitle */
+.subtitle{
+    text-align: center;
+    margin-bottom: 25px;
+    color: #666;
+}
+
+/* Button Grid */
+.button-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* Remove link styling */
+.button-grid a{
+    text-decoration: none;
+}
+
+/* Full width button */
+.button-grid button{
+    width: 100%;
+}
+
+/* CGPA button spans full row */
+.cgpa-btn{
+    grid-column: span 2;
+}
+
+/* Mobile responsiveness */
+@media(max-width:768px){
+
+    .button-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .cgpa-btn{
+        grid-column: span 1;
+    }
+}
